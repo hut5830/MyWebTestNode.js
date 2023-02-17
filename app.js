@@ -6,6 +6,7 @@ const debug = require(`debug`)(`app`);
 const morgan = require(`morgan`);
 const path = require(`path`);
 const contact = require(`./data/contact.json`);
+//require object class ของ json มาใช้งาน
 const { get } = require("http");
 const contactRoute = express.Router(); //Route1
 // เข้าถึง path ต่างๆ
@@ -23,9 +24,7 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.use("/contact", contactRoute);
 //Route3
 contactRoute.route("/").get((req, res) => {
-  res.render("contact",
-    contact,
-  );
+  res.render("contact", contact);
 });
 contactRoute.route("/1").get((req, res) => {
   res.send("Hellowww product1");
