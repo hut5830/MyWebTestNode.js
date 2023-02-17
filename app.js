@@ -5,7 +5,7 @@ const chalk = require(`chalk`);
 const debug = require(`debug`)(`app`);
 const morgan = require(`morgan`);
 const path = require(`path`);
-const contact = require("./data/contact.json");
+const contact = require(`./data/contact.json`);
 const { get } = require("http");
 const contactRoute = express.Router(); //Route1
 // เข้าถึง path ต่างๆ
@@ -24,13 +24,13 @@ app.use("/contact", contactRoute);
 //Route3
 contactRoute.route("/").get((req, res) => {
   res.render("contact",
-    contacts,
+    contact,
   );
 });
-contact.route("/1").get((req, res) => {
+contactRoute.route("/1").get((req, res) => {
   res.send("Hellowww product1");
 });
-contact.route("/2").get((req, res) => {
+contactRoute.route("/2").get((req, res) => {
   res.send("Hellowww product2");
 });
 
