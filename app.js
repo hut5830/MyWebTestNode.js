@@ -23,10 +23,10 @@ app.use("/contact", contact);
 //Route3
 contact.route("/").get((req, res) => {
   res.render("contact",{
-    contacts:[
-      {phone: "Phone"},
-      {address: "Address"},
-      {post: "Post"}
+    contact:[
+      {phone: "0949638281",address: "21/13",post: "10530"},
+      {phone: "0912342143",address: "22/31", post: "70000"},
+      {phone: "027455830",address: "42", post: "200"}
     ]
   });
 });

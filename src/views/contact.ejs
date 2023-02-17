@@ -363,10 +363,10 @@
                         </h2>
 
                         <p data-swiper-parallax="-30%">
-                          <% contact.map((contacts)=>{ %>
-                            <p><%=contacts(phone) %></p>
-                            <p><%=contacts(address) %></p>
-                            <p><%=contacts(post) %></p>
+                          <% contact.map((contact)=>{ %>
+                            <p><%=contact.phone %></p>
+                            <p><%=contact.address %></p>
+                            <p><%=contact.post %></p>
                             <% }) %>
                         </p>
                       </div>
