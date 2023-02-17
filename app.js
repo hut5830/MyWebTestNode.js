@@ -5,8 +5,9 @@ const chalk = require(`chalk`);
 const debug = require(`debug`)(`app`);
 const morgan = require(`morgan`);
 const path = require(`path`);
+const contact = require("./data/contact.json");
 const { get } = require("http");
-const contact = express.Router(); //Route1
+const contactRoute = express.Router(); //Route1
 // เข้าถึง path ต่างๆ
 const app = express();
 const port = process.env.PORT || 2000 || 3000 || 4000 || 5000;
@@ -19,16 +20,12 @@ app.use(morgan("combined"));
 app.use(express.static(path.join(__dirname, "/public/")));
 
 //Route2
-app.use("/contact", contact);
+app.use("/contact", contactRoute);
 //Route3
-contact.route("/").get((req, res) => {
-  res.render("contact",{
-    contact:[
-      {phone: "0949638281",address: "21/13",post: "10530"},
-      {phone: "0912342143",address: "22/31", post: "70000"},
-      {phone: "027455830",address: "42", post: "200"}
-    ]
-  });
+contactRoute.route("/").get((req, res) => {
+  res.render("contact",
+    contacts,
+  );
 });
 contact.route("/1").get((req, res) => {
   res.send("Hellowww product1");
