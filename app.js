@@ -22,7 +22,13 @@ app.use(express.static(path.join(__dirname, "/public/")));
 app.use("/contact", contact);
 //Route3
 contact.route("/").get((req, res) => {
-  res.render("contact");
+  res.render("contact",{
+    contact:[
+      {phone: "Phone"},
+      {address: "Address"},
+      {post: "Post"}
+    ]
+  });
 });
 contact.route("/1").get((req, res) => {
   res.send("Hellowww product1");
