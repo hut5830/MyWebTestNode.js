@@ -15,6 +15,8 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 app.use(morgan("combined"));
+//Route2
+app.use("/contact", contactRouter); //เก็บ URL ไว้ใน contactRoute เพื่อทำการ Route
 
 app.use(express.static(path.join(__dirname, "/public/")));
 
