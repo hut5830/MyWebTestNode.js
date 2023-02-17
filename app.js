@@ -9,12 +9,15 @@ const path = require(`path`);
 const app = express();
 const port = process.env.PORT || 2000 || 3000 || 4000 || 5000;
 
+app.set("views","./src/views");
+app.set("view engine", "ejs");
+
 app.use(morgan("combined"));
 
 app.use(express.static(path.join(__dirname, "/public/")));
 
 app.get("/", (req, res) => {
-  res.send("Hellos");
+  res.render (`index`,{username: "Hut", customer: ["Tatcha","Korn","Chom"]});
 });
 
 app.listen(port, () => {
