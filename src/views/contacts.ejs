@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Test</title>
+    <title>Contacts Details Test</title>
   </head>
   <body>
     <!-- Fetch Array ทีละรอบ -->
-    <% contact.map((contactRoute)=>{ %>
+    <p><%=contacts.id %></p>
     <p>
-      <a href="/contact/<%=contactRoute.id%>">เบอร์โทร<%=contactRoute.phone%></a>
+      <a href="/contact/"><%=contacts.phone %></a>
     </p>
-    <p>ที่อยู่<%=contactRoute.address%></p>
-    <p>รหัสไปรษณ๊<%=contactRoute.post %></p>
-    <% }); %>
+    <p><%=contacts.address %></p>
+    <p><%=contacts.post %></p>
+    <button onclick="history.back()">Back</button>
   </body>
 </html>
